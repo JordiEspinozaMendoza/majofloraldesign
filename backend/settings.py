@@ -28,7 +28,7 @@ SECRET_KEY = 'k3+_qk@25lw)w9$2f+5i)pw^oynctjqd8v_6_9-s@$a0_@%_!_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'majofloraldesign.herokuapp.com']
 
 
 # Application definition
