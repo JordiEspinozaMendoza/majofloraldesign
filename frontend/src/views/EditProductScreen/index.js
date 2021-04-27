@@ -170,15 +170,21 @@ export default function EditProductScreen({ match, history }) {
                 custom
                 onChange={(e) => setCategorieId(e.target.value)}
               >
-                {successCategories &&
-                  categories?.map((categorie) => (
-                    <option
-                      value={categorie._id}
-                      selected={categorieId === categorie._id ? true : false}
-                    >
-                      {categorie.name}
+                {successCategories && (
+                  <>
+                    <option selected={categorieId == undefined}>
+                      Selecciona una categoria
                     </option>
-                  ))}
+                    {categories?.map((categorie) => (
+                      <option
+                        value={categorie._id}
+                        selected={categorieId === categorie._id ? true : false}
+                      >
+                        {categorie.name}
+                      </option>
+                    ))}
+                  </>
+                )}
               </Form.Control>
             </Form.Group>
             <Form.Group controlId="image">
@@ -220,7 +226,21 @@ export default function EditProductScreen({ match, history }) {
             {loadingUpdate ? (
               <Loader />
             ) : errorUpdate ? (
-              <Message variant="danger">{errorUpdate}</Message>
+              categorieId == undefined ? (
+                <>
+                  <Message variant="danger">Selecciona una categoría</Message>
+                  <Button variant="primary" type="submit">
+                    Actualizar
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Message variant="danger">{errorUpdate}</Message>
+                  <Button variant="primary" type="submit">
+                    Actualizar
+                  </Button>
+                </>
+              )
             ) : (
               <Button variant="primary" type="submit">
                 Actualizar

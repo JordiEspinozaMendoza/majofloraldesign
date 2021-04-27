@@ -51,11 +51,10 @@ export default function HomeScreen({history}) {
           </Button>
         </Link>
       </Header>
-      <div
+      <div className="flowers-bg"
         style={{
-          backgroundImage:
-            "url(https://res.cloudinary.com/jordiespinoza/image/upload/v1619505502/Dise%C3%B1o_sin_t%C3%ADtulo_15_n3zikr.png)",
-          backgroundSize: "120% 100%",
+
+          backgroundSize: "150% 100%",
           backgroundPosition: "top center",
         }}
       >

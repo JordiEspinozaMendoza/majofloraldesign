@@ -4,7 +4,7 @@ export default function Product({ product }) {
   return (
     <Card className="my-3 p-3 rounded" border="light">
       <Card.Img
-        style={{ height: "38vh" }}
+        style={{ height: "35vh" }}
         src={`https://res.cloudinary.com/majo-floral-desing/${product.img}`}
       ></Card.Img>
       <Card.Body>
