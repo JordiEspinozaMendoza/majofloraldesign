@@ -1,0 +1,39 @@
+.main {
+  background-color: rgb(22, 10, 10) !important;
+  h1 {
+    width: 25%;
+  }
+}
+@media (max-width: 575px) {
+  h1 {
+    font-size: 3rem !important;
+    width: 50% !important;
+  }
+}
+.main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-position: top center;
+    background-image: url(https://static.dw.com/image/16857974_303.jpg);
+    background-size: 100% 100%;
+
+    opacity: 0.4;
+  }
+  h1 {
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+  }
+  h1,
+  Button {
+    position: relative;
+  }
+}

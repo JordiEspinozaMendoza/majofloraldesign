@@ -1,0 +1,51 @@
+.main {
+  background-color: #160a0a !important;
+}
+
+.main h1 {
+  width: 25%;
+}
+
+@media (max-width: 575px) {
+  h1 {
+    font-size: 3rem !important;
+    width: 50% !important;
+  }
+}
+
+.main {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-position: top center;
+  background-image: url(https://static.dw.com/image/16857974_303.jpg);
+  background-size: 100% 100%;
+  opacity: 0.4;
+}
+
+.main h1 {
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.main h1,
+.main Button {
+  position: relative;
+}
+/*# sourceMappingURL=styles.css.map */
