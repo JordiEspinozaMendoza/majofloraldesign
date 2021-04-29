@@ -34,8 +34,9 @@
   right: 0;
   left: 0;
   background-position: top center;
-  background-image: url(https://static.dw.com/image/16857974_303.jpg);
-  background-size: 100% 100%;
+  background-image: url(https://res.cloudinary.com/majo-floral-desing/image/upload/v1619722613/annie-spratt-WBpr_yH0Frg-unsplash_1_dev6oh.jpg);
+  background-size: 110% 150%;
+  background-position: top;
   opacity: 0.4;
 }
 

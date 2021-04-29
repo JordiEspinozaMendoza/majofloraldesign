@@ -53,7 +53,7 @@ export default function CatalogueScreen() {
         <Col md={3} className="text-dark categories-list">
           <div className="bg-light">
             <div className="p-3">
-              <h5
+              <span
                 className={"all" == categorie && "text-primary"}
                 style={{
                   cursor: "pointer",
@@ -64,7 +64,7 @@ export default function CatalogueScreen() {
                 }}
               >
                 <i className="fas fa-circle"></i> Todos
-              </h5>
+              </span>
             </div>
             {loadingCategories ? (
               <Loader />
@@ -74,7 +74,7 @@ export default function CatalogueScreen() {
               <>
                 {categories?.map((category) => (
                   <div className="p-3">
-                    <h5
+                    <span
                       className={category._id == categorie && "text-primary"}
                       style={{
                         cursor: "pointer",
@@ -85,7 +85,7 @@ export default function CatalogueScreen() {
                       }}
                     >
                       <i className="fas fa-circle"></i> {category.name}
-                    </h5>
+                    </span>
                   </div>
                 ))}
               </>

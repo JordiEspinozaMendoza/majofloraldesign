@@ -17,6 +17,16 @@
   background-image: url(https://res.cloudinary.com/jordiespinoza/image/upload/v1619505502/Dise%C3%B1o_sin_t%C3%ADtulo_15_n3zikr.png);
 }
 
+.cards-flowers {
+  background-size: 100% 170%;
+  font-weight: 700;
+}
+
+.cards-flowers h3,
+.cards-flowers span {
+  font-weight: 550;
+}
+
 @media (max-width: 769px) {
   .flowers-bg {
     background-image: none;

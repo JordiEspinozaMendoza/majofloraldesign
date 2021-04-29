@@ -14,7 +14,7 @@ import { LinkContainer } from "react-router-bootstrap";
 
 import { listProducts } from "../../actions/product_actions";
 import { listCategories } from "../../actions/categorie_actions";
-export default function HomeScreen({history}) {
+export default function HomeScreen({ history }) {
   const [index, setIndex] = useState(0);
 
   const handleSelect = (selectedIndex, e) => {
@@ -30,9 +30,7 @@ export default function HomeScreen({history}) {
     page,
   } = productList;
   const categorieList = useSelector((state) => state.categorieList);
-  const {
-    categories
-  } = categorieList;
+  const { categories } = categorieList;
 
   useEffect(() => {
     dispatch(listProducts("all", 1));
@@ -51,9 +49,9 @@ export default function HomeScreen({history}) {
           </Button>
         </Link>
       </Header>
-      <div className="flowers-bg"
+      <div
+        className="flowers-bg"
         style={{
-
           backgroundSize: "150% 100%",
           backgroundPosition: "top center",
         }}
@@ -70,10 +68,10 @@ export default function HomeScreen({history}) {
           >
             <Col md={6}>
               <div
-                className="d-flex align-items-left justify-content-center p-2 cards-flowers flex-column"
+                className="d-flex align-items-left justify-content-center text-light p-2 cards-flowers flex-column"
                 style={{
                   backgroundImage:
-                    "url(https://image.freepik.com/free-photo/beautiful-roses-bouquet-isolated-white-background_23-2147940338.jpg)",
+                    "url(https://res.cloudinary.com/majo-floral-desing/image/upload/v1619722089/priscilla-du-preez-CE1k0Wu65-M-unsplash_w8sipb.jpg)",
                 }}
               >
                 <h3>Feliz día de las madres</h3>
@@ -84,17 +82,17 @@ export default function HomeScreen({history}) {
             </Col>
             <Col md={6}>
               <div
-                className="d-flex align-items-left justify-content-center p-2 cards-flowers flex-column"
+                className="d-flex align-items-left justify-content-center text-light p-2 cards-flowers flex-column"
                 style={{
                   backgroundImage:
-                    "url(https://image.freepik.com/free-photo/beautiful-roses-bouquet-isolated-white-background_23-2147940338.jpg)",
+                    "url(https://res.cloudinary.com/majo-floral-desing/image/upload/v1619722195/tuan-nguy-n-minh-pGr7g4l8EOI-unsplash_ai6zsz.jpg)",
                 }}
               >
                 <h3>Sorprende a tu pareja</h3>
                 <ul>
-                  <li>Item</li>
-                  <li>Item</li>
-                  <li>Item</li>
+                  <li>Tijuana, Baja California</li>
+                  <li>Flower Bar</li>
+                  <li>Eventos temáticos</li>
                 </ul>
               </div>
             </Col>
@@ -122,44 +120,45 @@ export default function HomeScreen({history}) {
           </Container>
         </Container>
       </div>
-      <Carousel activeIndex={index} onSelect={handleSelect} >
+      <Carousel activeIndex={index} onSelect={handleSelect}>
         <Carousel.Item>
           <img
-          onClick={()=> history.push("/catalogo")} style={{cursor:"pointer"}}
+            onClick={() => history.push("/catalogo")}
+            style={{ cursor: "pointer" }}
             className="d-block w-100"
             src="https://www.odt.co.nz/sites/default/files/styles/odt_landscape_extra_large_21_10/public/story/2021/01/floristflowersgettyimages-921643034.jpg?itok=kUKQD08T"
             alt="First slide"
-            style={{maxHeight: "60vh"}}
+            style={{ maxHeight: "60vh" }}
           />
-              <Carousel.Caption>
-      <h3></h3>
-    </Carousel.Caption>
+          <Carousel.Caption>
+            <h3></h3>
+          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
-          onClick={()=> history.push("/catalogo")} style={{cursor:"pointer"}}
+            onClick={() => history.push("/catalogo")}
+            style={{ cursor: "pointer" }}
             className="d-block w-100"
             src="https://www.odt.co.nz/sites/default/files/styles/odt_landscape_extra_large_21_10/public/story/2021/01/floristflowersgettyimages-921643034.jpg?itok=kUKQD08T"
             alt="Second slide"
-                        style={{maxHeight: "60vh"}}
-
+            style={{ maxHeight: "60vh" }}
           />
-              <Carousel.Caption>
-      <h3></h3>
-    </Carousel.Caption>
+          <Carousel.Caption>
+            <h3></h3>
+          </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
           <img
-          onClick={()=> history.push("/catalogo")} style={{cursor:"pointer"}}
+            onClick={() => history.push("/catalogo")}
+            style={{ cursor: "pointer" }}
             className="d-block w-100"
             src="https://www.odt.co.nz/sites/default/files/styles/odt_landscape_extra_large_21_10/public/story/2021/01/floristflowersgettyimages-921643034.jpg?itok=kUKQD08T"
             alt="Third slide"
-                        style={{maxHeight: "60vh"}}
-
+            style={{ maxHeight: "60vh" }}
           />
-              <Carousel.Caption>
-      <h3></h3>
-    </Carousel.Caption>
+          <Carousel.Caption>
+            <h3></h3>
+          </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
     </>

@@ -14,7 +14,7 @@ export default function Header({ children }) {
     <div
       className="d-flex justify-content-center w-100 align-items-start mt-4 p-4 text-primary main flex-column"
       style={{
-        minHeight: "70vh",
+        minHeight: "80vh",
       }}
     >
       {children}
