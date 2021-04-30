@@ -5,9 +5,12 @@
   }
 }
 @media (max-width: 575px) {
+  .main {
+    height: 50vh !important;
+  }
   h1 {
-    font-size: 3rem !important;
-    width: 50% !important;
+    font-size: 1.5rem !important;
+    width: 95% !important;
   }
 }
 .main {
@@ -15,6 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 60vh;
   &::before {
     content: "";
     position: absolute;

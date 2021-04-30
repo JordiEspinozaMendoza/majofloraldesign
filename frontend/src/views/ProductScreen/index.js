@@ -9,6 +9,9 @@ import { Link } from "react-router-dom";
 
 import Loader from "../../components/Loader";
 import Message from "../../components/Message";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 export default function ProductScreen({ history, match }) {
   const productId = match.params.id;
   const dispatch = useDispatch();
@@ -23,6 +26,11 @@ export default function ProductScreen({ history, match }) {
   useEffect(() => {
     dispatch(details(productId));
   }, [productId, match, history]);
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
   return loadingDetails ? (
     <div style={{ minHeight: "100vh", marginTop: "15vh" }}>
       <Loader />
@@ -35,21 +43,25 @@ export default function ProductScreen({ history, match }) {
     <div
       style={{ marginTop: "10vh", overflowX: "hidden", marginBottom: "5vh" }}
     >
-      <Container className="p-5">
-        <Link to="/catalogo">
-          <Button>
-            {" "}
-            <i className="fas fa-exchange-alt"></i> Regresar
-          </Button>
-        </Link>
-        <h1 className="text-primary mt-3">{product?.name}</h1>
-        {product?.categorie["name"] && (
-          <h5 className="text-dark">Categoria: {product?.categorie["name"]}</h5>
-        )}
+      <Container className="p-5" data-aos={"fade-down"}>
+        <div>
+          <Link to="/catalogo">
+            <Button>
+              {" "}
+              <i className="fas fa-exchange-alt"></i> Regresar
+            </Button>
+          </Link>
+          <h1 className="text-primary mt-3">{product?.name}</h1>
+          {product?.categorie["name"] && (
+            <h5 className="text-dark">
+              Categoria: {product?.categorie["name"]}
+            </h5>
+          )}
+        </div>
       </Container>
       <Container>
         <Row>
-          <Col md={5}>
+          <Col md={5} data-aos={"fade-right"}>
             <ImageZoom
               image={{
                 src: `https://res.cloudinary.com/majo-floral-desing/${product?.img}`,
@@ -63,7 +75,7 @@ export default function ProductScreen({ history, match }) {
               }}
             />
           </Col>
-          <Col md={7} className="p-5">
+          <Col md={7} className="p-5" data-aos={"fade-left"}>
             <h1>$ {product?.price}</h1>
             <span>{product?.description}</span>
           </Col>

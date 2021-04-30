@@ -63,6 +63,7 @@ export default function HomeScreen({ history }) {
           }}
         >
           <Row
+            data-aos={"fade-down"}
             style={{ minHeight: "20vh", width: "100%" }}
             className="mt-4 mb-4 d-flex flex-row justify-content-between"
           >
@@ -98,7 +99,7 @@ export default function HomeScreen({ history }) {
               </div>
             </Col>
           </Row>
-          <h3>Pequeños detalles que alegran tu día</h3>
+          <h3 className="text-center">Pequeños detalles que alegran tu día</h3>
           <Row data-aos={"fade-up"}>
             {products?.map((product) => (
               <LinkContainer
@@ -121,7 +122,11 @@ export default function HomeScreen({ history }) {
           </Container>
         </Container>
       </div>
-      <Carousel activeIndex={index} onSelect={handleSelect}>
+      <Carousel
+        activeIndex={index}
+        onSelect={handleSelect}
+        data-aos={"fade-down"}
+      >
         <Carousel.Item>
           <img
             onClick={() => history.push("/catalogo")}

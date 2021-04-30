@@ -14,6 +14,9 @@ import { LinkContainer } from "react-router-bootstrap";
 
 import "./styles.css";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default function CatalogueScreen() {
   const dispatch = useDispatch();
   const [actualPage, setActualPage] = useState(1);
@@ -38,6 +41,9 @@ export default function CatalogueScreen() {
   }, [categorie, dispatch, actualPage]);
   useEffect(() => {
     dispatch(listCategories());
+    AOS.init({
+      duration: 1000,
+    });
   }, []);
   return (
     <div style={{ marginBottom: "5vh", overflowX: "hidden" }}>
@@ -49,7 +55,7 @@ export default function CatalogueScreen() {
           Catálogo
         </h1>
       </Header>
-      <Row style={{ marginTop: "5vh" }}>
+      <Row style={{ marginTop: "5vh" }} data-aos={"fade-down"}>
         <Col md={3} className="text-dark categories-list">
           <div className="bg-light">
             <div className="p-3">
