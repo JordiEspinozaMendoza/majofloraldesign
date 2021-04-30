@@ -91,11 +91,14 @@ def updateProduct(request, pk):
     try:
         data = request.data
         product = Product.objects.get(_id=pk)
-
+        print(data)
         product.name = data['name']
         product.description = data['description']
         product.price = data['price']
-        product.category = Categorie.objects.get(_id=data['category'])
+        if data['category'] != 'undefined':
+            product.category = Categorie.objects.get(_id=data['category'])
+        else:
+            product.category = None
         product.inStock = data['inStock']
 
         product.save()

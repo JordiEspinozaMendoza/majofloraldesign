@@ -109,16 +109,29 @@ export default function EditProductScreen({ match, history }) {
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(
-      updateProduct({
-        name: name,
-        _id: productId,
-        description: description,
-        category: categorieId,
-        price: price,
-        inStock: inStock,
-      })
-    );
+    if (categorieId == "Selecciona una categoría")
+      dispatch(
+        updateProduct({
+          name: name,
+          _id: productId,
+          category: 'undefined',
+          description: description,
+          price: price,
+          inStock: inStock,
+        })
+      );
+    else {
+      dispatch(
+        updateProduct({
+          name: name,
+          _id: productId,
+          description: description,
+          category: categorieId,
+          price: price,
+          inStock: inStock,
+        })
+      );
+    }
   };
   return loadingDetails ? (
     <div style={{ minHeight: "100vh", marginTop: "15vh" }}>
@@ -173,7 +186,7 @@ export default function EditProductScreen({ match, history }) {
                 {successCategories && (
                   <>
                     <option selected={categorieId == undefined}>
-                      Selecciona una categoria
+                      Selecciona una categoría
                     </option>
                     {categories?.map((categorie) => (
                       <option
