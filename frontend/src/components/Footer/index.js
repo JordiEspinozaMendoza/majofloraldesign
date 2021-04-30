@@ -11,9 +11,7 @@ export default function Footer() {
         <Col md={3}>
           <h5>Sobre nosotros</h5>
           <p style={{ fontSize: "14px" }}>
-            orem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            pellentesque consectetur vulputate. Aliquam fermentum mollis justo,
-            ut eleifend turpis posuere vitae. Aenean eget pretium metus.
+            Somos Majo Floral Design, estamos ubicados en Tijuana Baja California México, dedicados a la venta de flores bajo cotización y pedidos.
           </p>
         </Col>
         <Col md={3}>
@@ -23,7 +21,7 @@ export default function Footer() {
               <Link to="/">Inicio</Link>
             </p>
             <p>
-              <Link to="/catalogo/">Catalogo</Link>
+              <Link to="/catalogo/">Catálogo</Link>
             </p>
             <p>
               <Link to="/login">Iniciar sesión</Link>
@@ -47,7 +45,7 @@ export default function Footer() {
         <Col md={3}>
           <h5>Ubicación</h5>
           <div>
-            <h5>Proximamente</h5>
+            <h6>Proximamente</h6>
             {/* <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d215366.57847755888!2d-117.08789194669872!3d32.4966817514542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d9390226587bd3%3A0x14724bafa4e62456!2sTijuana%2C%20B.C.!5e0!3m2!1ses-419!2smx!4v1619509233057!5m2!1ses-419!2smx"
               width="100%"

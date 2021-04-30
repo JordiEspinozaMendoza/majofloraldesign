@@ -34,7 +34,6 @@
   right: 0;
   left: 0;
   background-position: top center;
-  background-image: url(https://res.cloudinary.com/majo-floral-desing/image/upload/v1619722613/annie-spratt-WBpr_yH0Frg-unsplash_1_dev6oh.jpg);
   background-size: 110% 150%;
   background-position: top;
   opacity: 0.4;
@@ -48,5 +47,13 @@
 .main h1,
 .main Button {
   position: relative;
+}
+
+.homeHeader::before {
+  background-image: url(https://res.cloudinary.com/majo-floral-desing/image/upload/v1619809100/pic7_ju7j8k.png);
+}
+
+.catalogueHeader::before {
+  background-image: url(https://res.cloudinary.com/majo-floral-desing/image/upload/v1619809495/pic8_elsmef.png);
 }
 /*# sourceMappingURL=styles.css.map */

@@ -41,7 +41,7 @@ export default function CatalogueScreen() {
   }, []);
   return (
     <div style={{ marginBottom: "5vh", overflowX: "hidden" }}>
-      <Header>
+      <Header customClass={"catalogueHeader"}>
         <h1
           className="text-light"
           style={{ fontSize: "5rem", letterSpacing: "2px" }}

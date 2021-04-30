@@ -41,7 +41,7 @@ export default function HomeScreen({ history }) {
   }, []);
   return (
     <>
-      <Header>
+      <Header customClass={"homeHeader"}>
         <h1 className="text-light">Una flor florece para su propia alegría</h1>
         <Link to="/catalogo/">
           <Button>
@@ -76,7 +76,8 @@ export default function HomeScreen({ history }) {
               >
                 <h3>Feliz día de las madres</h3>
                 <span className="w-50">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Visualiza nuestro catálogo para cotizaciones y darle el mejor
+                  regalo en su día.
                 </span>
               </div>
             </Col>
@@ -114,7 +115,7 @@ export default function HomeScreen({ history }) {
             <LinkContainer to="/catalogo/">
               <Button variant="primary">
                 {" "}
-                <i className="fas fa-store"></i> Ver catalogo completo
+                <i className="fas fa-store"></i> Ver catálogo completo
               </Button>
             </LinkContainer>
           </Container>
@@ -126,12 +127,21 @@ export default function HomeScreen({ history }) {
             onClick={() => history.push("/catalogo")}
             style={{ cursor: "pointer" }}
             className="d-block w-100"
-            src="https://www.odt.co.nz/sites/default/files/styles/odt_landscape_extra_large_21_10/public/story/2021/01/floristflowersgettyimages-921643034.jpg?itok=kUKQD08T"
+            src="https://res.cloudinary.com/majo-floral-desing/image/upload/v1619808591/pic4_joomlm.png"
             alt="First slide"
             style={{ maxHeight: "60vh" }}
           />
           <Carousel.Caption>
-            <h3></h3>
+            <h3
+              style={{
+                textShadow: "0 0 25px #000",
+                fontWeight: 600,
+                letterSpacing: "1px",
+                textTransform: "uppercase",
+              }}
+            >
+              Contáctanos para cotizaciones
+            </h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -139,12 +149,21 @@ export default function HomeScreen({ history }) {
             onClick={() => history.push("/catalogo")}
             style={{ cursor: "pointer" }}
             className="d-block w-100"
-            src="https://www.odt.co.nz/sites/default/files/styles/odt_landscape_extra_large_21_10/public/story/2021/01/floristflowersgettyimages-921643034.jpg?itok=kUKQD08T"
+            src="https://res.cloudinary.com/majo-floral-desing/image/upload/v1619808594/pic5_pv5qop.png"
             alt="Second slide"
             style={{ maxHeight: "60vh" }}
           />
           <Carousel.Caption>
-            <h3></h3>
+            <h3
+              style={{
+                textShadow: "0 0 25px #000",
+                fontWeight: 600,
+                letterSpacing: "1px",
+                textTransform: "uppercase",
+              }}
+            >
+              Los pequeños detalles significan mucho
+            </h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -152,12 +171,21 @@ export default function HomeScreen({ history }) {
             onClick={() => history.push("/catalogo")}
             style={{ cursor: "pointer" }}
             className="d-block w-100"
-            src="https://www.odt.co.nz/sites/default/files/styles/odt_landscape_extra_large_21_10/public/story/2021/01/floristflowersgettyimages-921643034.jpg?itok=kUKQD08T"
+            src="https://res.cloudinary.com/majo-floral-desing/image/upload/v1619808597/pic6_bduj5l.png"
             alt="Third slide"
             style={{ maxHeight: "60vh" }}
           />
           <Carousel.Caption>
-            <h3></h3>
+            <h3
+              style={{
+                textShadow: "0 0 25px #000",
+                fontWeight: 600,
+                letterSpacing: "1px",
+                textTransform: "uppercase",
+              }}
+            >
+              Detalles para cualquier ocasión
+            </h3>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
