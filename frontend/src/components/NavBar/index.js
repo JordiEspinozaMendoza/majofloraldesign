@@ -13,7 +13,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import { useState, useEffect } from "react";
 
 import { USER_LOGOUT } from "../../constants/user_constants";
-
+import "./styles.css";
 import { registerProduct } from "../../actions/product_actions";
 import { PRODUCT_REGISTER_RESET } from "../../constants/product_contants";
 export default function NavigationBar({ history }) {
@@ -52,13 +52,16 @@ export default function NavigationBar({ history }) {
           <Nav className="ml-auto">
             {userInfo && (
               <NavDropdown title="Admin" id="navDropdown">
-                <LinkContainer to="/admin/productos">
+                <LinkContainer className="item-admin" to="/admin/productos">
                   <NavDropdown.Item>Productos</NavDropdown.Item>
                 </LinkContainer>
-                <LinkContainer to="/admin/categorias">
+                <LinkContainer className="item-admin" to="/admin/categorias">
                   <NavDropdown.Item>Categorias</NavDropdown.Item>
                 </LinkContainer>
-                <NavDropdown.Item onClick={() => logoutHandler()}>
+                <NavDropdown.Item
+                  className="item-admin"
+                  onClick={() => logoutHandler()}
+                >
                   Cerrar sesión
                 </NavDropdown.Item>
               </NavDropdown>

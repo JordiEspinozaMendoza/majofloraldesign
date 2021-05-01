@@ -59,6 +59,7 @@ export default function EditProductScreen({ match, history }) {
   } = productUpdate;
 
   useEffect(() => {
+    !userInfo && history.push("/");
     dispatch(listCategories());
     console.log(categorieId);
     if (successUpdate) {

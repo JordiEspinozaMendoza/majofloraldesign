@@ -31,7 +31,7 @@ export default function ProductListScreen({ history }) {
   useEffect(() => {
     dispatch({ type: CATEGORIE_DELETE_RESET });
 
-    !userInfo.isAdmin ? history.push("/") : dispatch(listCategories());
+    !userInfo ? history.push("/") : dispatch(listCategories());
   }, [dispatch, history, userInfo, successDelete]);
 
   const deleteCategorieHandler = (id) => {

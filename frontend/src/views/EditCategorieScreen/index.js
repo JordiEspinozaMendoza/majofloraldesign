@@ -41,6 +41,7 @@ export default function UpdateCategorieScreen({ history, match }) {
   };
 
   useEffect(() => {
+    
     if (!userInfo) history.push("/");
     if (success) {
       dispatch({ type: CATEGORIE_UPDATE_RESET });

@@ -16,7 +16,7 @@ import {
   PRODUCT_DELETE_RESET,
 } from "../../constants/product_contants";
 export default function ProductListScreen({ history }) {
-    const [actualPage, setActualPage] = useState(1);
+  const [actualPage, setActualPage] = useState(1);
 
   const dispatch = useDispatch();
 
@@ -49,7 +49,7 @@ export default function ProductListScreen({ history }) {
     dispatch({ type: PRODUCT_REGISTER_RESET });
     dispatch({ type: PRODUCT_DELETE_RESET });
 
-    !userInfo.isAdmin ? history.push("/") : dispatch(listProducts("all", actualPage));
+    !userInfo ? history.push("/") : dispatch(listProducts("all", actualPage));
     successCreate &&
       history.push(`/admin/productos/${productCreate._id}/editar/`);
   }, [
@@ -59,7 +59,7 @@ export default function ProductListScreen({ history }) {
     successCreate,
     productCreate,
     successDelete,
-    actualPage
+    actualPage,
   ]);
 
   const createProductHandler = () => {
@@ -145,11 +145,11 @@ export default function ProductListScreen({ history }) {
               </tbody>
             </Table>
           )}
-                      <Paginator
-              pages={pages}
-              changePage={(value) => setActualPage(value)}
-              pageToSearch={actualPage}
-            ></Paginator>
+          <Paginator
+            pages={pages}
+            changePage={(value) => setActualPage(value)}
+            pageToSearch={actualPage}
+          ></Paginator>
         </Row>
       </main>
     </Container>
