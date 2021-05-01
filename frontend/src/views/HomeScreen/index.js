@@ -44,7 +44,7 @@ export default function HomeScreen({ history }) {
       <Header customClass={"homeHeader"}>
         <h1 className="text-light">Una flor florece para su propia alegría</h1>
         <Link to="/catalogo/">
-          <Button>
+          <Button variant="secondary">
             <i className="fas fa-store"></i> Ver catálogo
           </Button>
         </Link>

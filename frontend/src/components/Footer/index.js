@@ -1,20 +1,22 @@
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
+import "./styles.css";
 export default function Footer() {
   return (
     <footer
-      className="bg-dark text-light d-flex align-items-center w-100 flex-column p-4"
-      style={{ minHeight: "30vh" }}
+      className="bg-primary text-primary d-flex align-items-center w-100 flex-column p-4"
+      style={{ minHeight: "30vh", color: "#fff !important" }}
     >
       <Row>
         <Col md={3}>
           <h5>Sobre nosotros</h5>
           <p style={{ fontSize: "14px" }}>
-            Somos Majo Floral Design, estamos ubicados en Tijuana Baja California México, dedicados a la venta de flores bajo cotización y pedidos.
+            Somos Majo Floral Design, estamos ubicados en Tijuana Baja
+            California México, dedicados a la venta de flores bajo cotización y
+            pedidos.
           </p>
         </Col>
-        <Col md={3}>
+        <Col md={3} className="text-light" className="text-light">
           <h5>Links rapidos</h5>
           <div style={{ fontSize: "14px", color: "white" }}>
             <p>
@@ -28,7 +30,7 @@ export default function Footer() {
             </p>
           </div>
         </Col>
-        <Col md={3}>
+        <Col md={3} className="text-light" className="text-light">
           <h5>Redes sociales</h5>
           <div style={{ fontSize: "18px" }}>
             <Link to="/" className="mr-4">
@@ -42,7 +44,7 @@ export default function Footer() {
             </a>
           </div>
         </Col>
-        <Col md={3}>
+        <Col md={3} className="text-light" className="text-light">
           <h5>Ubicación</h5>
           <div>
             <h6>Proximamente</h6>

@@ -33,12 +33,12 @@ export default function NavigationBar({ history }) {
         fixed="top"
         expand="lg"
         collapseOnSelect
-        className="navbar navbar-expand-lg navbar-light bg-light"
+        className="navbar navbar-expand-lg navbar-dark bg-dark"
       >
         <Navbar.Brand>
           <Link to="/">
             <img
-              src="https://res.cloudinary.com/jordiespinoza/image/upload/v1619501944/Dise%C3%B1o_sin_t%C3%ADtulo_13_senfta.png"
+              src="https://res.cloudinary.com/majo-floral-desing/image/upload/v1619831386/Dise%C3%B1o_sin_t%C3%ADtulo_16_igmzkf.png"
               width="50"
               height="50"
               className="d-inline-block align-top"

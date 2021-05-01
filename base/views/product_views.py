@@ -61,7 +61,6 @@ def createProduct(request):
             price=0,
             description='',
             inStock=0,
-            category=Categorie.objects.get(_id=1)
         )
         serializer = ProductSerializer(product, many=False)
         return Response(serializer.data)

@@ -29,7 +29,7 @@ export default function EditProductScreen({ match, history }) {
   const [isUploading, setIsUploading] = useState(false);
 
   const [categorieName, setCategorieName] = useState();
-  const [categorieId, setCategorieId] = useState();
+  const [categorieId, setCategorieId] = useState("undefined");
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
@@ -60,6 +60,7 @@ export default function EditProductScreen({ match, history }) {
 
   useEffect(() => {
     dispatch(listCategories());
+    console.log(categorieId);
     if (successUpdate) {
       dispatch({ type: PRODUCT_UPDATE_RESET });
       dispatch({ type: PRODUCT_DETAILS_RESET });
@@ -74,7 +75,7 @@ export default function EditProductScreen({ match, history }) {
         setImage(product.img);
         setInStock(product.inStock);
         setCategorieName(product.categorie["name"]);
-        setCategorieId(product.categorie["_id"]);
+        product.categorie["_id"] && setCategorieId(product.categorie["_id"]);
       }
     }
   }, [product, productId, successUpdate, history, dispatch]);
@@ -114,7 +115,7 @@ export default function EditProductScreen({ match, history }) {
         updateProduct({
           name: name,
           _id: productId,
-          category: 'undefined',
+          category: "undefined",
           description: description,
           price: price,
           inStock: inStock,
@@ -185,7 +186,7 @@ export default function EditProductScreen({ match, history }) {
               >
                 {successCategories && (
                   <>
-                    <option selected={categorieId == undefined}>
+                    <option selected={categorieId == "undefined"}>
                       Selecciona una categoría
                     </option>
                     {categories?.map((categorie) => (
@@ -239,21 +240,12 @@ export default function EditProductScreen({ match, history }) {
             {loadingUpdate ? (
               <Loader />
             ) : errorUpdate ? (
-              categorieId == undefined ? (
-                <>
-                  <Message variant="danger">Selecciona una categoría</Message>
-                  <Button variant="primary" type="submit">
-                    Actualizar
-                  </Button>
-                </>
-              ) : (
-                <>
-                  <Message variant="danger">{errorUpdate}</Message>
-                  <Button variant="primary" type="submit">
-                    Actualizar
-                  </Button>
-                </>
-              )
+              <>
+                <Message variant="danger">{errorUpdate}</Message>
+                <Button variant="primary" type="submit">
+                  Actualizar
+                </Button>
+              </>
             ) : (
               <Button variant="primary" type="submit">
                 Actualizar

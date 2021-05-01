@@ -3,6 +3,12 @@
   background-position: 100% 100%;
   width: 100%;
   min-height: 40vh;
+  h3 {
+    color: #fff !important;
+  }
+}
+.carousel-item h3 {
+  color: #fff !important;
 }
 .col-md-6:first-child {
   padding-left: 0 !important;

@@ -5,6 +5,14 @@
   min-height: 40vh;
 }
 
+.cards-flowers h3 {
+  color: #fff !important;
+}
+
+.carousel-item h3 {
+  color: #fff !important;
+}
+
 .col-md-6:first-child {
   padding-left: 0 !important;
 }
