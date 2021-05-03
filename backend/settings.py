@@ -29,7 +29,7 @@ SECRET_KEY = 'k3+_qk@25lw)w9$2f+5i)pw^oynctjqd8v_6_9-s@$a0_@%_!_'
 DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost',
-                 'majofloraldesign.herokuapp.com', 'majofloraldesign.com']
+                 'majofloraldesign.herokuapp.com', 'www.majofloraldesign.com']
 
 
 # Application definition
