@@ -12,6 +12,7 @@ import Message from "../../components/Message";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "./styles.css"
 export default function ProductScreen({ history, match }) {
   const productId = match.params.id;
   const dispatch = useDispatch();

@@ -1,10 +1,9 @@
 import { Card, Button } from "react-bootstrap";
-
+import "./styles.css";
 export default function Product({ product }) {
   return (
-    <Card className="my-3 p-3 rounded" border="light">
+    <Card className="my-3 p-3 rounded custom-product" border="light">
       <Card.Img
-        style={{ height: "35vh" }}
         src={`https://res.cloudinary.com/majo-floral-desing/${product.img}`}
       ></Card.Img>
       <Card.Body>

@@ -1,0 +1,10 @@
+.custom-product img {
+  height: 35vh !important;
+}
+
+@media (max-width: 769px) {
+  .custom-product img {
+    height: 50vh !important;
+  }
+}
+/*# sourceMappingURL=styles.css.map */
