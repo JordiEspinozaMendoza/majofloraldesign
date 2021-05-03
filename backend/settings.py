@@ -28,7 +28,8 @@ SECRET_KEY = 'k3+_qk@25lw)w9$2f+5i)pw^oynctjqd8v_6_9-s@$a0_@%_!_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'majofloraldesign.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost',
+                 'majofloraldesign.herokuapp.com', 'majofloraldesign.com']
 
 
 # Application definition
@@ -167,8 +168,8 @@ if os.getcwd() == '/app':
     import dj_database_url
     db_from_env = dj_database_url.config(conn_max_age=500)
     DATABASES['default'].update(db_from_env)
-    SECURE_PROXY_SSL_HEADER =('HTTP_X_FORWARDED_PROTO', 'https')
-
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_SSL_REDIRECT = True
     DEBUG = False
 
 CORS_ALLOW_ALL_ORIGINS = True
