@@ -106,7 +106,7 @@ export default function HomeScreen({ history }) {
                 to={`/producto/${product._id}/`}
                 style={{ cursor: "pointer" }}
               >
-                <Col sm={12} md={6} lg={4} xl={3}>
+                <Col sm={12} md={6} lg={4} xl={4}>
                   <Product product={product} />
                 </Col>
               </LinkContainer>
