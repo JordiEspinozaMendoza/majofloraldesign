@@ -42,7 +42,7 @@ export default function HomeScreen({ history }) {
   return (
     <>
       <Header customClass={"homeHeader"}>
-        <h1 className="text-light">
+        <h1 className="text-light" style={{ fontFamily: "Dancing Script" }}>
           Regala sonrisas, regala amor...regala flores!
         </h1>
         <Link to="/catalogo/">
@@ -89,11 +89,12 @@ export default function HomeScreen({ history }) {
                 className="d-flex align-items-left justify-content-center text-light p-2 cards-flowers flex-column"
                 style={{
                   backgroundImage:
-                    "url(https://res.cloudinary.com/majo-floral-desing/image/upload/v1619722195/tuan-nguy-n-minh-pGr7g4l8EOI-unsplash_ai6zsz.jpg)",
+                    "url(https://images.unsplash.com/photo-1485560994238-db4592aa1a6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80)",
                 }}
               >
                 <h3>Sorprende a tu pareja</h3>
                 <ul>
+                  <li>Contamos con servicio a domicilio</li>
                   <li>Tijuana, Baja California</li>
                   <li>Flower Bar</li>
                   <li>Eventos temáticos</li>
@@ -101,7 +102,9 @@ export default function HomeScreen({ history }) {
               </div>
             </Col>
           </Row>
-          <h3 className="text-center">Pequeños detalles que alegran tu día</h3>
+          <h3 className="text-center" style={{ fontFamily: "Dancing Script" }}>
+            Pequeños detalles que alegran tu día
+          </h3>
           <Row data-aos={"fade-up"}>
             {products?.map((product) => (
               <LinkContainer
@@ -145,6 +148,7 @@ export default function HomeScreen({ history }) {
                 fontWeight: 600,
                 letterSpacing: "1px",
                 textTransform: "uppercase",
+                fontFamily: "Dancing Script",
               }}
             >
               Contáctanos para cotizaciones
@@ -167,6 +171,7 @@ export default function HomeScreen({ history }) {
                 fontWeight: 600,
                 letterSpacing: "1px",
                 textTransform: "uppercase",
+                fontFamily: "Dancing Script",
               }}
             >
               Los pequeños detalles significan mucho
@@ -189,6 +194,7 @@ export default function HomeScreen({ history }) {
                 fontWeight: 600,
                 letterSpacing: "1px",
                 textTransform: "uppercase",
+                fontFamily: "Dancing Script",
               }}
             >
               Detalles para cualquier ocasión

@@ -9,7 +9,7 @@ export default function Footer() {
     >
       <Row>
         <Col md={3}>
-          <h5>Sobre nosotros</h5>
+          <h5 style={{ fontFamily: "Dancing Script" }}>Sobre nosotros</h5>
           <p style={{ fontSize: "14px" }}>
             Somos una empresa dedicada a realizar exclusivos diseños florales
             para esa persona especial, para tu evento o simplemente para decorar
@@ -17,7 +17,7 @@ export default function Footer() {
           </p>
         </Col>
         <Col md={3} className="text-light" className="text-light">
-          <h5>Links rapidos</h5>
+          <h5 style={{ fontFamily: "Dancing Script" }}>Links rapidos</h5>
           <div style={{ fontSize: "14px", color: "white" }}>
             <p>
               <Link to="/">Inicio</Link>
@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
         </Col>
         <Col md={3} className="text-light" className="text-light">
-          <h5>Redes sociales</h5>
+          <h5 style={{ fontFamily: "Dancing Script" }}>Redes sociales</h5>
           <div style={{ fontSize: "18px" }}>
             <Link to="/" className="mr-4">
               <i className="fab fa-facebook-f"></i>
@@ -45,7 +45,7 @@ export default function Footer() {
           </div>
         </Col>
         <Col md={3} className="text-light" className="text-light">
-          <h5>Ubicación</h5>
+          <h5 style={{ fontFamily: "Dancing Script" }}>Ubicación</h5>
           <div>
             <h6>Proximamente</h6>
             {/* <iframe

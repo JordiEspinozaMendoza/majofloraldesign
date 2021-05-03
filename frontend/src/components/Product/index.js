@@ -7,7 +7,9 @@ export default function Product({ product }) {
         src={`https://res.cloudinary.com/majo-floral-desing/${product.img}`}
       ></Card.Img>
       <Card.Body>
-        <Card.Title>{product.name}</Card.Title>
+        <Card.Title style={{ fontFamily: "Dancing Script" }}>
+          {product.name}
+        </Card.Title>
         <h5>$ {product.price}</h5>
         <Card.Text>{product.name}</Card.Text>
         <Button>

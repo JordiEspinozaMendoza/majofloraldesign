@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
 .cards-flowers {
   background-size: 100% 100%;
   background-position: 100% 100%;
@@ -7,6 +8,7 @@
 
 .cards-flowers h3 {
   color: #fff !important;
+  font-family: "Dancing Script", cursive;
 }
 
 .carousel-item h3 {
@@ -27,12 +29,16 @@
 
 .cards-flowers {
   background-size: 100% 170%;
-  font-weight: 700;
+  font-weight: 200;
 }
 
 .cards-flowers h3,
 .cards-flowers span {
-  font-weight: 550;
+  font-weight: 200;
+}
+
+.cards-flowers:last-child {
+  background-position: 170%;
 }
 
 @media (max-width: 769px) {

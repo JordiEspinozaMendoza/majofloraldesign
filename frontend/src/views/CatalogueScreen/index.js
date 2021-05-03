@@ -50,7 +50,11 @@ export default function CatalogueScreen() {
       <Header customClass={"catalogueHeader"}>
         <h1
           className="text-light"
-          style={{ fontSize: "5rem", letterSpacing: "2px" }}
+          style={{
+            fontSize: "5rem",
+            letterSpacing: "2px",
+            fontFamily: "Dancing Script",
+          }}
         >
           Catálogo
         </h1>

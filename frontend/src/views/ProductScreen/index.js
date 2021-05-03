@@ -12,7 +12,7 @@ import Message from "../../components/Message";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
-import "./styles.css"
+import "./styles.css";
 export default function ProductScreen({ history, match }) {
   const productId = match.params.id;
   const dispatch = useDispatch();
@@ -52,7 +52,12 @@ export default function ProductScreen({ history, match }) {
               <i className="fas fa-exchange-alt"></i> Regresar
             </Button>
           </Link>
-          <h1 className="text-primary mt-3">{product?.name}</h1>
+          <h1
+            className="text-primary mt-3"
+            style={{ fontFamily: "Dancing Script" }}
+          >
+            {product?.name}
+          </h1>
           {product?.categorie["name"] && (
             <h5 className="text-dark">
               Categoria: {product?.categorie["name"]}
