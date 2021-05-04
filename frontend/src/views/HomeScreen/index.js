@@ -145,10 +145,10 @@ export default function HomeScreen({ history }) {
             <h3
               style={{
                 textShadow: "0 0 25px #000",
-                fontWeight: 600,
+                fontWeight: 200,
                 letterSpacing: "1px",
                 textTransform: "uppercase",
-                fontFamily: "Dancing Script",
+                
               }}
             >
               Contáctanos para cotizaciones
@@ -168,10 +168,10 @@ export default function HomeScreen({ history }) {
             <h3
               style={{
                 textShadow: "0 0 25px #000",
-                fontWeight: 600,
+                fontWeight: 200,
                 letterSpacing: "1px",
                 textTransform: "uppercase",
-                fontFamily: "Dancing Script",
+                
               }}
             >
               Los pequeños detalles significan mucho
@@ -191,10 +191,10 @@ export default function HomeScreen({ history }) {
             <h3
               style={{
                 textShadow: "0 0 25px #000",
-                fontWeight: 600,
+                fontWeight: 200,
                 letterSpacing: "1px",
                 textTransform: "uppercase",
-                fontFamily: "Dancing Script",
+                
               }}
             >
               Detalles para cualquier ocasión
