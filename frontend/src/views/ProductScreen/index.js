@@ -82,11 +82,7 @@ export default function ProductScreen({ history, match }) {
             />
           </Col>
           <Col md={7} className="p-5" data-aos={"fade-left"}>
-            <h1>
-              ${" "}
-              {product?.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
-              MXN
-            </h1>
+            <h1>$ {product?.price}</h1>
             <span>{product?.description}</span>
           </Col>
         </Row>
