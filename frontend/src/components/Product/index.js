@@ -10,7 +10,10 @@ export default function Product({ product }) {
         <Card.Title style={{ fontFamily: "Dancing Script" }}>
           {product.name}
         </Card.Title>
-        <h5>$ {product.price}</h5>
+        <h5>
+          $ {product?.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+          MXN
+        </h5>
         <Card.Text>{product.name}</Card.Text>
         <Button>
           {" "}

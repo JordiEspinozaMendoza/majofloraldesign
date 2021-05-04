@@ -46,9 +46,7 @@ export default function NavigationBar({ history }) {
             />{" "}
           </Link>
         </Navbar.Brand>
-        <Navbar.Brand style={{ fontFamily: "Dancing Script" }}>
-          Majo Floral Design
-        </Navbar.Brand>
+        <Navbar.Brand>Majo Floral Design</Navbar.Brand>
         <Navbar.Toggle aria-controls="navigationBar" />
         <Navbar.Collapse id="navigationBar">
           <Nav className="ml-auto">
