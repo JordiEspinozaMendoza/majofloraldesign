@@ -11,10 +11,7 @@ export default function Product({ product }) {
           {product.name}
         </Card.Title>
         <h5>
-          ${" "}
-          {product.price
-            .toString()
-            .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")}{" "}
+          $ {product.price}
           MXN
         </h5>
         <Card.Text>{product.name}</Card.Text>
