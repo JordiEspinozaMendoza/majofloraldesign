@@ -82,9 +82,10 @@ export default function ProductListScreen({ history }) {
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(listProducts(query, 1));
     if (query == "") {
       setQuery("all");
+      dispatch(listProducts(query, 1));
+    } else {
       dispatch(listProducts(query, 1));
     }
   };
