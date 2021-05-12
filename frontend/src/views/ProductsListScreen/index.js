@@ -84,7 +84,7 @@ export default function ProductListScreen({ history }) {
     e.preventDefault();
     if (query == "") {
       setQuery("all");
-      dispatch(listProducts(query, 1));
+      dispatch(listProducts("all", 1));
     } else {
       dispatch(listProducts(query, 1));
     }
