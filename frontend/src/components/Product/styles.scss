@@ -1,8 +1,16 @@
 .custom-product img {
   height: 35vh !important;
+  display: block;
+  margin: 0 auto;
 }
 @media (max-width: 769px) {
   .custom-product img {
     height: 50vh !important;
+    width: 80%;
+  }
+}
+@media (max-width: 500px) {
+  .custom-product img {
+    height: 40vh !important;
   }
 }

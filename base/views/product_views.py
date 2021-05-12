@@ -28,7 +28,7 @@ def getProducts(request, cat, query, page):
                 serializer = ProductSerializer(products, many=True)
                 return Response({"products": serializer.data, 'pages': paginator.num_pages})
         else:
-            products = Product.objects.filter(name__icontaints=query)
+            products = Product.objects.filter(name__icontains=query)
             paginator = Paginator(products, 8)
             products = paginator.page(page)
             serializer = ProductSerializer(products, many=True)

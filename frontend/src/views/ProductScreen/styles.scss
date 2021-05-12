@@ -1,3 +1,18 @@
-@media (max-width: 769px){
-    
+.image-product {
+  height: 60vh !important;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+@media (max-width: 769px) {
+  .image-product {
+    height: 50vh !important;
+    width: 80%;
+  }
+}
+@media (max-width: 500px) {
+  .image-product {
+    height: 40vh !important;
+    width: 80%;
+  }
 }

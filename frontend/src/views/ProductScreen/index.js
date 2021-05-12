@@ -72,8 +72,7 @@ export default function ProductScreen({ history, match }) {
               image={{
                 src: `https://res.cloudinary.com/majo-floral-desing/${product?.img}`,
                 alt: `${product?.name}`,
-                className: "img",
-                style: { width: "100%", height: "60vh" },
+                className: "img image-product",
               }}
               zoomImage={{
                 src: `https://res.cloudinary.com/majo-floral-desing/${product?.img}`,
