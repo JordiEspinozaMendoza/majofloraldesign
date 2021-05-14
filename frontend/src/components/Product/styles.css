@@ -1,5 +1,5 @@
 .custom-product img {
-  height: 35vh;
+  height: 40vh;
   display: block;
   margin: 0 auto;
   border-radius: 0;
@@ -11,7 +11,7 @@
 
 @media (max-width: 1200px) {
   .custom-product img {
-    height: 20vh;
+    height: 40vh;
   }
 }
 
@@ -23,8 +23,8 @@
 
 @media (max-width: 769px) {
   .custom-product img {
-    height: 20vh;
-    width: 95%;
+    height: 40vh;
+    width: 100%;
   }
   .custom-product {
     padding: 0px;
@@ -44,7 +44,7 @@
 
 @media (max-width: 500px) {
   .custom-product img {
-    height: 12vh !important;
+    height: 20vh !important;
   }
   .custom-product .text-product {
     font-size: 15px;
@@ -62,9 +62,6 @@
 }
 
 @media (max-width: 350px) {
-  .custom-product img {
-    height: 12vh !important;
-  }
   .custom-product .text-product {
     font-size: 10px;
   }

@@ -125,9 +125,9 @@ export default function CatalogueScreen() {
             </option>
           </Form.Control>
         </Col>
-        <Col md={9} className="bg-light">
+        <Col md={9}>
           <div className=" p-2" style={{ minHeight: "70vh" }}>
-            <Row>
+            <Row className="products-row">
               {loadingList ? (
                 <Loader />
               ) : errorList ? (
@@ -142,7 +142,7 @@ export default function CatalogueScreen() {
                     to={`/producto/${product._id}/`}
                     style={{ cursor: "pointer" }}
                   >
-                    <Col xs={4}>
+                    <Col xs={6} md={4}>
                       <Product product={product} />
                     </Col>
                   </LinkContainer>
