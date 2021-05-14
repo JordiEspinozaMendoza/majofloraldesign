@@ -2,20 +2,22 @@ import { Card, Button } from "react-bootstrap";
 import "./styles.css";
 export default function Product({ product }) {
   return (
-    <Card className="my-3 p-3 rounded custom-product" border="light">
+    <Card className="my-3 rounded custom-product" border="light">
       <Card.Img
         src={`https://res.cloudinary.com/majo-floral-desing/${product.img}`}
       ></Card.Img>
-      <Card.Body>
-        <Card.Title style={{ fontFamily: "Dancing Script" }}>
+      <Card.Body className="text-card-body">
+        <Card.Title
+          className="text-product"
+          style={{ fontFamily: "Dancing Script" }}
+        >
           {product.name}
         </Card.Title>
-        <h5>
+        <h5 className="text-product-price">
           $ {product.price}
           MXN
         </h5>
-        <Card.Text>{product.name}</Card.Text>
-        <Button>
+          <Button className="product-details">
           {" "}
           <i className="fas fa-info-circle"></i> Ver detalles
         </Button>

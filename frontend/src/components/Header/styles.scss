@@ -20,7 +20,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   height: 60vh;
   &::before {
     content: "";
@@ -51,6 +51,11 @@
 .catalogueHeader {
   &::before {
     background-image: url(https://res.cloudinary.com/majo-floral-desing/image/upload/v1620093915/j9evjzagwcafcz4ifts5.jpg);
-    
-  } 
+  }
+}
+@media (max-width: 576px) {
+  .main {
+    text-align: center;
+    align-items: center;
+  }
 }

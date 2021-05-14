@@ -111,7 +111,7 @@ export default function HomeScreen({ history }) {
                 to={`/producto/${product._id}/`}
                 style={{ cursor: "pointer" }}
               >
-                <Col sm={12} md={6} lg={4} xl={3}>
+                <Col xs={4}>
                   <Product product={product} />
                 </Col>
               </LinkContainer>
@@ -148,7 +148,6 @@ export default function HomeScreen({ history }) {
                 fontWeight: 200,
                 letterSpacing: "1px",
                 textTransform: "uppercase",
-                
               }}
             >
               Contáctanos para cotizaciones
@@ -171,7 +170,6 @@ export default function HomeScreen({ history }) {
                 fontWeight: 200,
                 letterSpacing: "1px",
                 textTransform: "uppercase",
-                
               }}
             >
               Los pequeños detalles significan mucho
@@ -194,7 +192,6 @@ export default function HomeScreen({ history }) {
                 fontWeight: 200,
                 letterSpacing: "1px",
                 textTransform: "uppercase",
-                
               }}
             >
               Detalles para cualquier ocasión

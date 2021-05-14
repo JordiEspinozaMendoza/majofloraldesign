@@ -22,7 +22,7 @@ export default function Header({ children, customClass }) {
   return (
     <div
       data-aos={"fade-down"}
-      className={`d-flex justify-content-center w-100 align-items-start mt-4 p-4 text-primary main flex-column ${customClass}`}
+      className={`d-flex justify-content-center w-100  mt-4 p-4 text-primary main flex-column ${customClass}`}
     >
       {children}
     </div>

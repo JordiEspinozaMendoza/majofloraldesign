@@ -12,17 +12,29 @@ from rest_framework import status
 
 
 @api_view(['GET'])
-def getProducts(request, cat, query, page):
+def getProducts(request, cat, query, page, order):
     try:
         if query == 'all':
             if cat == "all":
-                products = Product.objects.all()
+                if order == "Max":
+                    products = Product.objects.order_by("-price")
+                elif order == "Min":
+                    products = Product.objects.order_by("price")
+                else:
+                    products = Product.objects.all()
                 paginator = Paginator(products, 8)
                 products = paginator.page(page)
                 serializer = ProductSerializer(products, many=True)
                 return Response({"products": serializer.data, 'pages': paginator.num_pages})
             else:
-                products = Product.objects.filter(category=cat)
+                if order == "Max":
+                    products = Product.objects.filter(
+                        category=cat).order_by("-price")
+                elif order == "Min":
+                    products = Product.objects.filter(
+                        category=cat).order_by("price")
+                else:
+                    products = Product.objects.filter(category=cat)
                 paginator = Paginator(products, 8)
                 products = paginator.page(page)
                 serializer = ProductSerializer(products, many=True)

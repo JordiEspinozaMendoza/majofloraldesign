@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Button, Image, Row, Col } from "react-bootstrap";
+import { Button, Image, Row, Col, Form } from "react-bootstrap";
 import Product from "../../components/Product";
 import Loader from "../../components/Loader";
 import Message from "../../components/Message";
@@ -29,6 +29,7 @@ export default function CatalogueScreen() {
     categories,
   } = categorieList;
 
+  const [orderPrice, setOrderPrice] = useState("all");
   const productList = useSelector((state) => state.productList);
   const {
     loading: loadingList,
@@ -37,8 +38,8 @@ export default function CatalogueScreen() {
     pages,
   } = productList;
   useEffect(() => {
-    dispatch(listProducts("all", actualPage, categorie));
-  }, [categorie, dispatch, actualPage]);
+    dispatch(listProducts("all", actualPage, categorie, orderPrice));
+  }, [categorie, dispatch, actualPage, orderPrice]);
   useEffect(() => {
     dispatch(listCategories());
     AOS.init({
@@ -60,22 +61,24 @@ export default function CatalogueScreen() {
         </h1>
       </Header>
       <Row style={{ marginTop: "5vh" }} data-aos={"fade-down"}>
-        <Col md={3} className="text-dark categories-list">
-          <div className="bg-light">
-            <div className="p-3">
-              <span
-                className={"all" == categorie && "text-primary"}
-                style={{
-                  cursor: "pointer",
-                }}
-                onClick={() => {
-                  setCategorie("all");
-                  setActualPage(1);
-                }}
-              >
-                <i className="fas fa-circle"></i> Todos
-              </span>
-            </div>
+        <Col
+          md={3}
+          className="text-dark categories-list "
+          style={{ paddingLeft: "30px" }}
+        >
+          <h5>Filtrar</h5>
+          <span className="py-2 d-block">Categorías</span>
+          <Form.Control
+            as="select"
+            custom
+            onChange={(e) => {
+              setCategorie(e.target.value);
+              setActualPage(1);
+            }}
+          >
+            <option value={"all"} selected={categorie === "all" ? true : false}>
+              Todo
+            </option>
             {loadingCategories ? (
               <Loader />
             ) : errorCategories ? (
@@ -83,24 +86,44 @@ export default function CatalogueScreen() {
             ) : (
               <>
                 {categories?.map((category) => (
-                  <div className="p-3">
-                    <span
-                      className={category._id == categorie && "text-primary"}
-                      style={{
-                        cursor: "pointer",
-                      }}
-                      onClick={() => {
-                        setCategorie(category._id);
-                        setActualPage(1);
-                      }}
-                    >
-                      <i className="fas fa-circle"></i> {category.name}
-                    </span>
-                  </div>
+                  <option
+                    value={category._id}
+                    selected={categorie === category._id ? true : false}
+                  >
+                    {category.name}
+                  </option>
                 ))}
               </>
             )}
-          </div>
+          </Form.Control>
+          <span className="py-2 d-block">Precio</span>
+          <Form.Control
+            as="select"
+            custom
+            onChange={(e) => {
+              setOrderPrice(e.target.value);
+              setActualPage(1);
+            }}
+          >
+            <option
+              value={"all"}
+              selected={orderPrice === "all" ? true : false}
+            >
+              Ninguno
+            </option>
+            <option
+              value={"Max"}
+              selected={orderPrice === "Max" ? true : false}
+            >
+              Mayor a menor
+            </option>
+            <option
+              value={"Min"}
+              selected={orderPrice === "Min" ? true : false}
+            >
+              Menor a mayor
+            </option>
+          </Form.Control>
         </Col>
         <Col md={9} className="bg-light">
           <div className=" p-2" style={{ minHeight: "70vh" }}>
@@ -119,7 +142,7 @@ export default function CatalogueScreen() {
                     to={`/producto/${product._id}/`}
                     style={{ cursor: "pointer" }}
                   >
-                    <Col sm={12} md={6} lg={4} xl={3}>
+                    <Col xs={4}>
                       <Product product={product} />
                     </Col>
                   </LinkContainer>

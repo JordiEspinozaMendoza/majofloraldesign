@@ -80,34 +80,36 @@ export const updateProduct = (product) => async (dispatch, getState) => {
     });
   }
 };
-export const listProducts = (query, page, cat="all") => async (dispatch, getState) => {
-  try {
-    dispatch({ type: PRODUCT_LIST_REQUEST });
+export const listProducts =
+  (query, page, cat = "all", order = "all") =>
+  async (dispatch, getState) => {
+    try {
+      dispatch({ type: PRODUCT_LIST_REQUEST });
 
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
-    const { data } = await axios.get(
-      `api/products/getproducts/${query}/${cat}/${page}/`,
-      config
-    );
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      const { data } = await axios.get(
+        `api/products/getproducts/${query}/${cat}/${page}/${order}/`,
+        config
+      );
 
-    dispatch({
-      type: PRODUCT_LIST_SUCESS,
-      payload: data,
-    });
-  } catch (error) {
-    dispatch({
-      type: PRODUCT_LIST_FAIL,
-      payload:
-        error.response && error.response.data.detail
-          ? error.response.data.detail
-          : error.message,
-    });
-  }
-};
+      dispatch({
+        type: PRODUCT_LIST_SUCESS,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: PRODUCT_LIST_FAIL,
+        payload:
+          error.response && error.response.data.detail
+            ? error.response.data.detail
+            : error.message,
+      });
+    }
+  };
 export const productDetails = (id) => async (dispatch, getState) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
