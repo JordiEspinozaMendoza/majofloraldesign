@@ -3,10 +3,26 @@
   width: 100%;
   margin: 0 auto;
   display: block;
+  transition: 300ms;
+}
+.list-pics {
+  padding-top: 20px;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  img:first-child {
+    margin-right: 20px;
+  }
+  img {
+    cursor: pointer;
+  }
 }
 @media (max-width: 769px) {
   .image-product {
     height: 50vh !important;
+    width: 80%;
+  }
+  .list-pics {
     width: 80%;
   }
 }

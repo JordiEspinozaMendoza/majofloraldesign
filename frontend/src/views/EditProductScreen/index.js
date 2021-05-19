@@ -25,6 +25,7 @@ export default function EditProductScreen({ match, history }) {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
   const [image, setImage] = useState("");
+  const [image2, setImage2] = useState("");
   const [inStock, setInStock] = useState();
   const [isUploading, setIsUploading] = useState(false);
 
@@ -74,6 +75,7 @@ export default function EditProductScreen({ match, history }) {
         setDescription(product.description);
         setPrice(product.price);
         setImage(product.img);
+        setImage2(product.img2);
         setInStock(product.inStock);
         setCategorieName(product.categorie["name"]);
         product.categorie["_id"] && setCategorieId(product.categorie["_id"]);
@@ -81,13 +83,13 @@ export default function EditProductScreen({ match, history }) {
     }
   }, [product, productId, successUpdate, history, dispatch]);
 
-  const uploadFileHandler = async (e) => {
+  const uploadFileHandler = (number) => async (e) => {
     const file = e.target.files[0];
     const formData = new FormData();
 
     formData.append("image", file);
     formData.append("product_id", productId);
-
+    formData.append("imageNumber", number);
     setIsUploading(true);
 
     try {
@@ -226,7 +228,35 @@ export default function EditProductScreen({ match, history }) {
                 id="image-file"
                 label="Elegir un archivo"
                 custom
-                onChange={uploadFileHandler}
+                onChange={uploadFileHandler(1)}
+              ></Form.File>
+              {isUploading && <Loader />}
+            </Form.Group>
+            <Form.Group controlId="image2">
+              <Form.Label>Imagen 2</Form.Label>
+              <div className="d-flex align-items-center w-100 justify-content-center">
+                {product?.img2 && (
+                  <Image
+                    className="d-block my-4 shadow"
+                    style={{ maxWidth: "330px", maxHeight: "250px" }}
+                    xs={6}
+                    md={4}
+                    src={`https://res.cloudinary.com/majo-floral-desing/${product.img2}`}
+                  />
+                )}
+              </div>
+              <Form.Control
+                type="text"
+                placeholder="Ingresa la imagen"
+                value={image2}
+                onChange={(e) => setImage2(e.target.value)}
+                readOnly={true}
+              ></Form.Control>
+              <Form.File
+                id="image-file"
+                label="Elegir un archivo"
+                custom
+                onChange={uploadFileHandler(2)}
               ></Form.File>
               {isUploading && <Loader />}
             </Form.Group>

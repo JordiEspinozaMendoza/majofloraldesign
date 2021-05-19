@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Row, Col, Container, Button } from "react-bootstrap";
+import { Row, Col, Container, Button, Image } from "react-bootstrap";
 import ImageZoom from "react-medium-image-zoom";
 import { productDetails as details } from "../../actions/product_actions";
 
@@ -16,7 +16,7 @@ import "./styles.css";
 export default function ProductScreen({ history, match }) {
   const productId = match.params.id;
   const dispatch = useDispatch();
-
+  const [image, setImage] = useState(true);
   const productDetails = useSelector((state) => state.productDetails);
   const {
     error: errorDetails,
@@ -70,15 +70,37 @@ export default function ProductScreen({ history, match }) {
           <Col md={5} data-aos={"fade-right"}>
             <ImageZoom
               image={{
-                src: `https://res.cloudinary.com/majo-floral-desing/${product?.img}`,
+                src: image
+                  ? `https://res.cloudinary.com/majo-floral-desing/${product?.img}`
+                  : `https://res.cloudinary.com/majo-floral-desing/${product?.img2}`,
                 alt: `${product?.name}`,
                 className: "img image-product",
               }}
               zoomImage={{
-                src: `https://res.cloudinary.com/majo-floral-desing/${product?.img}`,
+                src: image
+                  ? `https://res.cloudinary.com/majo-floral-desing/${product?.img}`
+                  : `https://res.cloudinary.com/majo-floral-desing/${product?.img2}`,
                 alt: `${product?.name}`,
               }}
             />
+            <div className="d-flex align-items-start  list-pics">
+              {product?.img && product?.img2 && (
+                <>
+                  <Image
+                    src={`https://res.cloudinary.com/majo-floral-desing/${product?.img}`}
+                    height="100px"
+                    width="100px"
+                    onClick={() => setImage(true)}
+                  ></Image>
+                  <Image
+                    src={`https://res.cloudinary.com/majo-floral-desing/${product?.img2}`}
+                    height="100px"
+                    width="100px"
+                    onClick={() => setImage(false)}
+                  ></Image>
+                </>
+              )}
+            </div>
           </Col>
           <Col md={7} className="p-5" data-aos={"fade-left"}>
             <h1>

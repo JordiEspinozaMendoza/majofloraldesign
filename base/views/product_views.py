@@ -129,8 +129,12 @@ def uploadImage(request):
         data = request.data
         product_id = data['product_id']
         product = Product.objects.get(_id=product_id)
+        if data["imageNumber"] == "1":
+            product.img = request.FILES.get('image')
+        elif data["imageNumber"] == "2":
+            print("edit 2")
+            product.img2 = request.FILES.get('image')
 
-        product.img = request.FILES.get('image')
         product.save()
 
         return Response('Imagen actualizada correctamente')

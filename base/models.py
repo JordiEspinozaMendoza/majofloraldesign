@@ -19,6 +19,7 @@ class Product(models.Model):
     inStock = models.BooleanField(blank=True)
     _id = models.AutoField(primary_key=True, editable=False)
     img = CloudinaryField('image')
+    img2 = CloudinaryField('image')
 
     def __str__(self):
         return self.name
