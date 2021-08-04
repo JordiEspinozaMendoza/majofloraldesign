@@ -14,6 +14,11 @@ export default function Footer() {
             Somos una empresa dedicada a realizar exclusivos diseños florales
             para esa persona especial, para tu evento o simplemente para decorar
             tu casa o negocio
+            <br />
+            <br />
+            <b>Aviso de privacidad</b>
+            <br/>
+            No recolectamos ningún dato personal de tus visitas.
           </p>
         </Col>
         <Col md={3} className="text-light" className="text-light">
